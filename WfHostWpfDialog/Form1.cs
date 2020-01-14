@@ -18,20 +18,15 @@ namespace WfHostWpfDialog
         {
             InitializeComponent();
 
-            var wpfApp = System.Windows.Application.Current;
-            if (wpfApp == null)
+            var wpfApp = System.Windows.Application.Current ?? new System.Windows.Application()
             {
-                wpfApp = new System.Windows.Application()
-                {
-
-                };
-            }
+                ShutdownMode = ShutdownMode.OnExplicitShutdown
+            };
             var locator = new ViewModelLocator();
             wpfApp.Resources.Add("Locator", locator);
             wpfApp.Resources.MergedDictionaries.Add(
                 new ResourceDictionary()
                 {
-                    //Source = new Uri("Resources.xaml", UriKind.Relative)
                     Source = new Uri("pack://application:,,,/WpfSample;component/Resources.xaml")
                 });
 

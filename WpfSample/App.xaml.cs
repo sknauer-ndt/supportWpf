@@ -24,7 +24,6 @@ namespace WpfSample
             Application.Current.Resources.MergedDictionaries.Add(
                 new ResourceDictionary()
                 {
-                    //Source = new Uri("Resources.xaml", UriKind.Relative)
                     Source = new Uri("pack://application:,,,/WpfSample;component/Resources.xaml")
                 });
 
